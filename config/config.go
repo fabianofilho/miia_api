@@ -42,12 +42,12 @@ func Load() configurations.Configurations {
 
 		MaxSizeMbUpload: 10 << 55, // min << max
 
-		BCryptSecret: "#1$eY)&E&0",
+		BCryptSecret: "#1$eY)&4430",
 
 		// Session
 		Session: configurations.SessionConfiguration{
-			Name:  "A2%!#23g4$0$",
-			Store: sessions.NewCookieStore([]byte("_-)(AS(&HSDH@ˆ@@#$##$*{{{$$}}}(U$$#@D)&#Y!)P(@M)(Xyeg3b321k5*443@@##@$!")),
+			Name:  "A2%!#23dad#32$",
+			Store: sessions.NewCookieStore([]byte("_-)(AS(&H:(SD)_:)H@ˆ@@#$##$*{{{$$}}}(U$$#@D)&#Y!)P(@Mkdksdsb321k5*443@@##@$!")),
 			Options: &sessions.Options{
 				Path:     "/",
 				MaxAge:   3600 * 2, //86400 * 7,
