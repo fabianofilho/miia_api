@@ -12,4 +12,9 @@ func rest(r *mux.Router) {
 	r.HandleFunc("/rest/logout", mhandlers.AuthProtection(controllers.AuthController{}.Logout)).Methods("POST", "GET")
 	r.HandleFunc("/rest/check/auth", controllers.AuthController{}.CheckAuth).Methods("GET")
 
+	//User
+	r.HandleFunc("/rest/user/new", mhandlers.AuthProtection(controllers.UserController{}.NewClientUser)).Methods("POST")
+
+	//Predict
+	r.HandleFunc("/rest/predict/new", controllers.PredictController{}.Predict).Methods("POST")
 }

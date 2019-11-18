@@ -48,8 +48,17 @@ A2%!#23dad#32$
 {
     version: "1.0",
     data:[
-        {
-            PAYLOAD DO FABIANUS
+       {
+            apgar5 : "", // valor bruto
+            peso : "", // valor bruto
+            idade_mae : "", //  valor bruto
+            consultas : "", // 1,2,3,4,9
+            gestacao : "", // 1,2,3,4,5,6,9
+            sit_conjugal_mae : "", // 1,2,3,4,5,9
+            sexo : "", // m,f,i
+            anomalia : "", // 1,2,9
+            gravidez : "", //1,2,3,9
+            parto: "" // 1,2,9
         }
     ]
 }
@@ -73,7 +82,18 @@ A2%!#23dad#32$
     success:(bool),
     data: [
         {
-            input: (PAYLOAD DO FABIANUS),
+            input: {
+                apgar5 : "", // valor bruto
+                peso : "", // valor bruto
+                idade_mae : "", //  valor bruto
+                consultas : "", // 1,2,3,4,9
+                gestacao : "", // 1,2,3,4,5,6,9
+                sit_conjugal_mae : "", // 1,2,3,4,5,9
+                sexo : "", // m,f,i
+                anomalia : "", // 1,2,9
+                gravidez : "", //1,2,3,9
+                parto: "" // 1,2,9
+            },
             result: (RESULTADO DO FABIANUS)
         }
     ]
@@ -92,7 +112,18 @@ A2%!#23dad#32$
 {
     success:(bool),
     data:{
-            input: (PAYLOAD DO FABIANUS),
+            input: {
+                apgar5 : "", // valor bruto
+                peso : "", // valor bruto
+                idade_mae : "", //  valor bruto
+                consultas : "", // 1,2,3,4,9
+                gestacao : "", // 1,2,3,4,5,6,9
+                sit_conjugal_mae : "", // 1,2,3,4,5,9
+                sexo : "", // m,f,i
+                anomalia : "", // 1,2,9
+                gravidez : "", //1,2,3,9
+                parto: "" // 1,2,9
+            },
             result: (RESULTADO DO FABIANUS)
         }
 }
