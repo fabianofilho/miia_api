@@ -65,7 +65,7 @@ A2%!#23dad#32$
 @return
 {
     success:(bool),
-    result: (RESULTADO DO FABIANUS)
+    result: [<probNao>,<probSim>]
 }
 ```
 
