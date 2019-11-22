@@ -9,6 +9,14 @@ type SemusOutPayload struct {
 	Json map[string]string
 }
 
+type SemusSQL struct {
+	ID        string `json:"idsemus"`
+	IDUser    string `json:"iduser"`
+	IDCompany string `json:"idcompany"`
+	Result    string `json:"result"`
+	Input     string `json:"input"`
+}
+
 type SemusRecPayload struct {
 	Apgar5      string `json:"apgar5" schema:"apgar5"`
 	Peso        string `json:"peso" schema:"peso"`
@@ -42,6 +50,10 @@ func (cc Semus) Parse() (s SemusOutPayload) {
 	for i, key := range cc.Keys {
 		s.Json[key] = cc.Values[i]
 	}
+	return s
+}
+
+func (cc SemusSQL) Parse() (s Semus) {
 	return s
 }
 

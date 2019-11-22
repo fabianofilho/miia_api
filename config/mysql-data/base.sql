@@ -33,17 +33,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `idcompany` INT NULL,
   `level` INT NULL,
   `token` TEXT NULL,
-  PRIMARY KEY (`iduser`),
-  INDEX `user__company_idx` (`idcompany` ASC) VISIBLE,
-  CONSTRAINT `user__company`
-    FOREIGN KEY (`idcompany`)
-    REFERENCES `company` (`idcompany`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`iduser`))
 ENGINE = InnoDB;
 
 
-
+-- -----------------------------------------------------
+-- Table `semus`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `semus` (
+  `idsemus` INT NOT NULL AUTO_INCREMENT,
+  `iduser` INT NULL,
+  `idcompany` INT NULL,
+  `result` TEXT NULL,
+  `input` TEXT NULL,
+  PRIMARY KEY (`idsemus`))
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

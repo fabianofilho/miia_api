@@ -15,11 +15,11 @@ func Load() configurations.Configurations {
 		Name: "MIIA API - GO",
 
 		MysqlUrl: fmt.Sprintf("%s:%s@tcp(%s:%s)/%s",
-			"root",         // User
-			"rootpassword", // password
-			"localhost",    // host
-			"3311",         // port
-			"blackwhale"),  // Database
+			"root",      // User
+			"usbw",      // password
+			"localhost", // host
+			"3307",      // port
+			"miia"),     // Database
 
 		MongoUrl: "",
 		MongoDb:  "",

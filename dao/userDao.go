@@ -42,9 +42,7 @@ func (cc User) Login(user models.User) (result models.User, success bool, err er
 	success = false
 
 	err = mysql.Driver.Execute(mysql.THE_CASE, &users,
-		`SELECT u.login, u.iduser, u.token, p.nome, u.foto, u.tipo_usuario,u.idpessoa, u.idinstituicao, u.senha FROM usuario as u 
-			INNER JOIN pessoa as p ON p.idpessoa = u.idpessoa
-			where login=?`, user.Username)
+		`SELECT * FROM user WHERE username  = ?`, user.Username)
 
 	if err != nil {
 		utils.CriticalError("[UserDAO][Login] - Error on login query", err.Error())

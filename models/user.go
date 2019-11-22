@@ -21,21 +21,21 @@ const SESSION_VALUE_SPECIALTY string = "specialty"
 type User struct {
 	People
 	Email     string `json:"email"`
-	Username  string `json:"login"`
+	Username  string `json:"username"`
 	Token     string `json:"token"`
 	Picture   string `json:"foto"`
-	Password  string `json:"senha"`
+	Password  string `json:"password"`
 	ID        int64  `json:"iduser"`
-	Level     int    `json:"tipo_usuario"`
-	Instution int    `json:"idinstituicao"`
+	Level     int    `json:"level"`
+	Instution int    `json:"idcompany"`
 	Specialty int
 }
 
 type MysqlUser struct {
 	User
 	ID        string `json:"iduser"`
-	Level     string `json:"tipo_usuario"`
-	Instution string `json:"idinstituicao"`
+	Level     string `json:"level"`
+	Instution string `json:"idcompany"`
 }
 
 func (mysql MysqlUser) ParseSql() (u User) {
