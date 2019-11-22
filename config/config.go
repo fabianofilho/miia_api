@@ -10,8 +10,17 @@ import (
 	"github.com/unrolled/secure"
 )
 
+type Configs struct {
+	FlaskServer string
+}
+
+var Config Configs
+
 func Load() configurations.Configurations {
 	//token = "+batatadoce22#"
+
+	Config.FlaskServer = "http://localhost:5000/predict"
+
 	return configurations.Configurations{
 		Name: "MIIA API - GO",
 

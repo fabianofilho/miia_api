@@ -14,12 +14,6 @@ import (
 // BaseController -
 type HealthController struct{}
 
-func config() {
-	//mongo.GetNextID("health")
-	//mongo.CreateIndex("health", "id")
-	//mongo.CreateIndex("traffic", "receivedfor")
-}
-
 // Health route
 func (cc HealthController) Health(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -29,7 +23,7 @@ func (cc HealthController) Health(w http.ResponseWriter, r *http.Request) {
 // Config database
 func (cc HealthController) Config(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
-	config()
+	//config()
 	handlers.Response(w, true)
 }
 
@@ -50,7 +44,7 @@ func (cc HealthController) ResetDatabase(w http.ResponseWriter, r *http.Request)
 	}
 
 	//Config
-	config()
+	//config()
 
 	if len(errors) > 0 {
 		handlers.Response(w, errors)
