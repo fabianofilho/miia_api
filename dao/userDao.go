@@ -34,6 +34,18 @@ func (cc User) NewUser(user models.User) (result models.User, success bool, err 
 }
 
 func (cc User) CheckToken(user models.User) (success bool, err error) {
+	var users []models.MysqlUser
+	success = false
+
+	err = mysql.Driver.Execute(mysql.THE_CASE, &users,
+		`SELECT * FROM user WHERE token  = ?`, user.Token)
+
+	if err != nil {
+		utils.CriticalError("[UserDAO][CheckToken] - Error on Token query", err.Error())
+		return
+	}
+
+	success = len(users) > 0
 	return
 }
 

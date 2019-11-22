@@ -16,5 +16,5 @@ func rest(r *mux.Router) {
 	r.HandleFunc("/rest/user/new", mhandlers.AuthProtection(controllers.UserController{}.NewClientUser)).Methods("POST")
 
 	//Predict
-	r.HandleFunc("/rest/predict/new", controllers.PredictController{}.Predict).Methods("POST")
+	r.HandleFunc("/rest/predict/new", mhandlers.TokenHandler(controllers.PredictController{}.Predict)).Methods("POST")
 }

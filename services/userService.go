@@ -9,10 +9,15 @@ import (
 type UserService interface {
 	Login(username string, password string) (user models.User, success bool, err error)
 	NewUserClient(user models.User) (result models.User, success bool, err error)
+	CheckToken(token string) (success bool, err error)
 }
 
 type User struct {
 	UserDAO dao.UserDAO
+}
+
+func (cc User) CheckToken(token string) (success bool, err error) {
+	return cc.UserDAO.CheckToken(models.User{Token: token})
 }
 
 func (cc User) Login(username string, password string) (user models.User, success bool, err error) {

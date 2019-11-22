@@ -58,7 +58,3 @@ func (cc Semus) Get(semusID int, companyID int) (semus models.Semus, sucess bool
 
 	return
 }
-
-func (cc Semus) Save(semus models.Semus) (success bool, err error) {
-	return
-}

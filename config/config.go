@@ -11,6 +11,7 @@ import (
 )
 
 func Load() configurations.Configurations {
+	//token = "+batatadoce22#"
 	return configurations.Configurations{
 		Name: "MIIA API - GO",
 

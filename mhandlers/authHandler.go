@@ -7,8 +7,34 @@ import (
 	"github.com/joaopandolfi/blackwhale/configurations"
 	"github.com/joaopandolfi/blackwhale/handlers"
 	"github.com/joaopandolfi/blackwhale/utils"
+	"github.com/joaopandolfi/miia_api/dao"
 	"github.com/joaopandolfi/miia_api/models"
+	"github.com/joaopandolfi/miia_api/services"
 )
+
+var uservice = services.User{
+	UserDAO: dao.User{},
+}
+
+// TokenHandler -
+// @handler
+// Intercept all transactions and check if is authenticated
+func TokenHandler(next http.HandlerFunc) http.HandlerFunc {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		url := r.URL.String()
+
+		s, err := uservice.CheckToken(handlers.GetHeader(r, "token"))
+
+		if !s || err != nil {
+			utils.Debug("[TokenHandler]", "Auth Error", url)
+			handlers.Redirect(r, w, "/login")
+			return
+		}
+
+		utils.Debug("[TokenHandler]", "Authenticated", url)
+		next.ServeHTTP(w, r)
+	})
+}
 
 // LoggedHandler -
 // @handler
