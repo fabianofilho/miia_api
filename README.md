@@ -1,6 +1,10 @@
 # miia_api
 MIIA api
 
+## Executar
+1. Clonar para dentro do **GOPATH** (src/github.com/joaopandolfi/miia_api)
+2. Executar o comando **go get**
+3. Rodar **go run main.go**
 
 ## Routes
 
